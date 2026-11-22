@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Superficies (modo oscuro principal) */
+  --color-canvas: #0a0a12;
+  --color-surface: #11111c;
+  --color-surface-2: #181827;
+  --color-line: #262638;
+
+  /* Texto */
+  --color-ink: #ececf6;
+  --color-muted: #8e8ea8;
+
+  /* Marca: morado y azul */
+  --color-brand: #8b5cf6;
+  --color-brand-strong: #7c3aed;
+  --color-accent: #60a5fa;
+
+  /* Estados */
+  --color-success: #34d399;
+  --color-warning: #fbbf24;
+  --color-danger: #f87171;
+
+  --radius-card: 1rem;
+
+  --animate-fade-up: fade-up 0.4s ease-out both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-canvas font-sans text-ink antialiased;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-brand) 40%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

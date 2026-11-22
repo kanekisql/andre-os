@@ -1,0 +1,25 @@
+# Dependencias y build
+node_modules/
+dist/
+.vercel/
+*.tsbuildinfo
+
+# Variables de entorno reales (nunca se suben)
+.env
+.env.*
+!.env.example
+
+# Supabase local
+supabase/.branches/
+supabase/.temp/
+
+# Logs y sistema
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/*
+!.vscode/extensions.json
+.idea/
